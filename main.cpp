@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 #include "vigenere.h"
 
+using std::string;
 using std::ifstream;
 using std::ofstream;
 using std::cin;
@@ -11,8 +13,8 @@ void printMenu();
 int main()
 {
     int userInput;
-    char filename[30];
-    char key[30];
+    string filename;
+    string key;
     ifstream fin;
     ofstream fout;
 
@@ -33,7 +35,18 @@ int main()
 
         printf("Key: ");
         cin >> key;
-        
+
+        string test = encrypt(fin, key);
+    
+        /*
+        while(!fin.eof())
+        {
+            char currChar = fin.get();
+            printf("%c", currChar);
+            numChars++;
+        }*/
+
+
     }
 
     return 0;
